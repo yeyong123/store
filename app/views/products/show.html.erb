@@ -1,0 +1,26 @@
+#encoding:utf-8
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>标题:</b>
+  <%= @product.title %>
+</p>
+
+<p>
+  <b>描述:</b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <b>商品图片:</b>
+  <%= @product.image_url %>
+</p>
+
+<p>
+  <b>价格:</b>
+  <%= @product.price %>
+</p>
+
+
+<%= link_to '编辑', edit_product_path(@product) %> |
+<%= link_to '返回', products_path %>
