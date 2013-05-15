@@ -2,12 +2,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>商城</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag "application" %>
+  <title>务实的程序员书城</title>
+  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "store", media: "all" %>
+  <%= javascript_include_tag "appliation" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<%= yield %>
+<body id="store">
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "务实的程序员" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <%= link_to '首页', store_path %> <br/>
+      <a href='#'>问题</a><br/>
+      <a href='#'>最新信息</a><br/>
+      <a href='#'>联系我</a><br/>
+    </div>
+  <div id="main">
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>

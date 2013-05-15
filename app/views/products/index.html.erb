@@ -1,7 +1,7 @@
 #encoding:utf-8
 <div id="product_list">
 <h1>商品列表</h1>
-
+<hr><hr>
 <table>
 
 <% @products.each do |product| %>
@@ -16,11 +16,7 @@
       <dd><%= truncate(strip_tags(product.description),
                                   length: 80) %></dd>
     </dl>
-    <td class="list_actions">
 
-    <%= link_to '编辑', edit_product_path(product) %><br/>
-    <%= link_to '删除', product, method: :delete, 
-      data: { confirm: '确定删除的吗?' } %></td>
   </tr>
 <% end %>
 </table>

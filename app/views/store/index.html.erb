@@ -1,0 +1,18 @@
+#encoding:utf-8
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+<h1>编程书籍书架</h1>
+<hr>
+<% @products.each do |product| %>
+  <div class="entry">
+    <%= image_tag(product.image_url) %>
+    <h3><%= product.title %></h3>
+    <%= sanitize(product.description) %>
+  <div class="price_line">
+    <span class="price">￥<%= product.price %></span>
+    <%= button_to '加入购物车', line_items_path(product_id: product) %>
+  </div>
+</div>
+<% end %>
+
