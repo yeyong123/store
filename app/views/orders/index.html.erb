@@ -1,6 +1,5 @@
 #encoding:utf-8
-<h1>订单列表详情</h1>
-
+<h3>订单列表详情</h3>
 <table>
   <tr>
     <th>姓名</th>
@@ -11,20 +10,14 @@
     <th></th>
     <th></th>
   </tr>
-
 <% @orders.each do |order| %>
   <tr>
-    <td><%= order.name %></td>
+    <td>|<%= link_to order.name, order %>|</td>
     <td><%= order.address %></td>
-    <td><%= order.email %></td>
-    <td><%= order.pay_type %></td>
-    <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-  </tr>
+    <td><%= order.email %>|</td>
+    <td><%= order.pay_type %>|</td>
+    </tr>
 <% end %>
 </table>
-
-<br />
-
 <%= link_to '新订单', new_order_path %>
 <p><%= will_paginate @orders %></p>
