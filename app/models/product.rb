@@ -10,6 +10,7 @@ class Product < ActiveRecord::Base
   validates :image_url, format: {with: %r{\.(gif|jpg|png)$ }i,
                                  message: '链接地址必须是GIF，JPG，PNG图像'}
 
+  has_many :order, through: :line_items
   private
 
   def ensure_not_referenced_by_any_line_item

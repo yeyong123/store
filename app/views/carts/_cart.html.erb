@@ -7,5 +7,6 @@
     <td class="total_cell">￥<%= cart.total_price %></td>
   </tr>
 </table>
+<%= button_to '付款', new_order_path , method: :get %>
 <%= button_to '清空购物车', cart, method: :delete,
   confirm: '确定删除？' %>
