@@ -1,11 +1,12 @@
-#encoding:utf-8
+
 <!DOCTYPE html>
+
 <html>
 <head>
   <title>务实的程序员书城</title>
   <%= stylesheet_link_tag "scaffold" %>
   <%= stylesheet_link_tag "store", media: "all" %>
-  <%= javascript_include_tag "appliation" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body id="store">
@@ -15,6 +16,11 @@
   </div>
   <div id="columns">
     <div id="side">
+  <% if @cart %>
+    <%= hidden_div_if(@cart.line_items.empty?, id: "cart") do %>
+      <%= render @cart %>
+    <% end %>
+  <% end %>
       <%= link_to '首页', store_path %> <br/>
       <a href='#'>问题</a><br/>
       <a href='#'>最新信息</a><br/>

@@ -1,0 +1,11 @@
+#encoding:utf-8
+<div class="cart_title">你的购物车</div>
+<table>
+  <%= render(cart.line_items) %>
+  <tr class="total_line">
+    <td colspan="2">合计</td>
+    <td class="total_cell">￥<%= cart.total_price %></td>
+  </tr>
+</table>
+<%= button_to '清空购物车', cart, method: :delete,
+  confirm: '确定删除？' %>
